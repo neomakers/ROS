@@ -42,4 +42,3 @@ echo "请耐心等待" >> kaikeba
 vim kaikeba -c "BundleInstall" -c "q" -c "q"
 rm kaikeba
 echo "安装完成"
-
