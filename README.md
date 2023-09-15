@@ -8,7 +8,7 @@
   1. 在开始菜单选择中的Software Update,选择其中的Setting,选择其中的Ubuntu Software,选择其中的Download from。选择China中的一个站点,选择Choose Server。点击Close,选择Update,等待更新
   2. 在Terminal中输入`cd ~/Desktop`跳转到桌面路径
   3. 在Terminal中输入`sudo apt-get update`更新列表
-  4. 在Terminal中输入`sudo apt-get install git`安装git
+  4. 在Terminal中输入`sudo apt-get install git`安装git,注意下载完成后需要选择`Y`才能安装
   5. 在Terminal中输入`git clone https://github.com/neomakers/ROS`
   6. 在Terminal中输入`cd ./ROS`进入到当前文件夹(`.`)下的`ROS`文件夹
   7. 在Terminal中输入`sudo bash ./vim_init.sh`然后输入登录用户的密码，安装vim和配置vim
