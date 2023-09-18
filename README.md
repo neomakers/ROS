@@ -1,6 +1,7 @@
 # ROS
 该项目主要是为机器人系统(Robot Operating System)使用。
 详细使用文档请参考官方 https://wiki.ros.org/
+安装视频教程以已上传至Bilibili详见链接：<link>https://www.bilibili.com/video/BV1fu4y167rm/</link>
 ## 安装
 ### ROS1 安装配套ubuntu18.04
   针对不同版本的Ubuntu大家需要进行产看对应的ros_install_ubuntuXX.sh。如果你不知道自己的Ubuntu版本,请在终端输Terminal入如下命令查看`cat /proc/version`，打开Terminal,可以按住Ctrl+Alt+T，相关视频课参考:
