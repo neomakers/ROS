@@ -77,7 +77,7 @@ graph TD;
 
    退回到`catkin_ws`文件夹下，编译工作空间
    ```SHELL
-      ccd ~/catkin_ws
+      cd ~/catkin_ws
       catkin_make
    ```
    编译成功后`catkin_ws`工作空间文件夹下会出现`src`,`devel`,`launch`,`src` 文件夹，但是没有出现`Install`
@@ -98,18 +98,25 @@ graph TD;
    catkin_create_pkg test_pkg std_msgs rospy roscpp
    ```
    其中，功能包名称为test_pkg,依赖的包有std_mgs、rospy、roscpp
+   如果该步骤出现,如下错误，很有可能是没有把ROS自带的命令添加到环境当中
+   ```SHELL
+   usage: catkin_create_pkg [-h] [--meta] [-s [SYS_DEPS [SYS_DEPS ...]]]
+                         [-b [BOOST_COMPS [BOOST_COMPS ...]]] [-V PKG_VERSION]
+                         [-D DESCRIPTION] [-l LICENSE] [-a AUTHOR]
+                         [-m MAINTAINER] --rosdistro ROSDISTRO
+                         name [dependencies [dependencies ...]]
+   catkin_create_pkg: error: argument --rosdistro is required
+
+   ```
+   在Terminal中执行`source /opt/ros/melodic/setup.bash`后再执行上述操作，重新创建功能包。
    
-2. 退回到工作空间目录进行编译
+3. 退回到工作空间目录进行编译
    ```SHELL
    cd ~/catkin
    catkin_make
    ```
    编译成功后将新的工作空间的路径添加到系统变量当中,这样系统才能识别出工作空间下的变量。
    ```SHELL
-   source ~/catkin_ws/devel/setup.sh   ```
-
-
-
-
- 
+   source ~/catkin_ws/devel/setup.sh
+   ```
 
