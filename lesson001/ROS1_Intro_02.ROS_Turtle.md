@@ -6,9 +6,9 @@
   3. 打开Terminal, 输入```rosrun turtlesim turtle_teleop_key```。启动控制键盘；
   4. 启动查看工具rqt_graph。打开Terminal，输入```rqt_graph```。启动图产看工具。
      
+![图](https://github.com/neomakers/ROS/blob/main/lesson001/lesson02rosgraph.png)
 (提示，如果roscore，rosrun等ros命令不要用，需要将ros添加至环境变量,```source /opt/melodic/setup.bash```)
-
-## 加载配置文件
+## 加载配置文件不用每次输入```source /opt/melodic/setup.bash```
 每次Terminal打开都会通运行配置文件`.bashrc`文件。通过在`.bashrc`文件中添加```source /opt/melodic/setup.bash```命令。从而使得每次启动自动加载ROS命令。
 ```SHELL
 vim ~/.bashrc
@@ -18,5 +18,8 @@ vim编辑器，在命令状态下按下`GG`，会自动跳转至文件最后。�
 ```SHELL
 source /opt/melodic/setup.bash
 ```
-按下键盘上的`ESC`按键，此时跳转到命令状态。此时输入冒号`:w`按下`Enter`按键。将保存(其中w是write的缩写，写入)。然后输入`:q`按`Enter`按键，退出。（其中`q`为quit的缩写）
+按下键盘上的`ESC`按键，此时跳转到命令状态。此时输入冒号`:w`按下`Enter`按键。将保存(其中w是write的缩写，写入)。然后输入`:q`按`Enter`按键，退出。（其中`q`为quit的缩写）。
+恭喜你，至此以后打开Terminal会自动加载ROS命令了。不用每次输入`source /opt/ros/melodic/setup.bash`
+
+## 
 
