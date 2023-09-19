@@ -106,8 +106,8 @@ graph TD;
    ```
    编译成功后将新的工作空间的路径添加到系统变量当中,这样系统才能识别出工作空间下的变量。
    ```SHELL
-   source ~/catkin_ws/devel/setup.sh
-   ```
+   source ~/catkin_ws/devel/setup.sh   ```
+
 
 
 
