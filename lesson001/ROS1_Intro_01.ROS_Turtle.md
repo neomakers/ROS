@@ -5,19 +5,30 @@ ROS 入门
    ```SHELL
    roscore
    ```
-2. 打开一个新的Terminal,启动一个海归仿真器,海归仿真器`turtlesim`是一个功能包，启动功能把需要用`rosrun`。`turtlesim_node`为仿真节点
+   当输入`roscore`显示`Command 'roscore' not found...`时，说明我们的`ros`没有。输入如下命令返回为空
+   ```SHELL
+   echo $ROS_PACKAGE_PATH
+   ```
+   添加到环境变量之中，需要在Terminal 如下操作,从而增加环境变量。重复上述操作，会有输出。
+   ```SHELL
+   source /opt/ros/melodic/setup.bash
+   echo $ROS_PACKAGE_PATH
+   ```
+   输出`/opt/ros/melodic/share`说明该位置的ROS变量已经添加到环境变量当中。再执行`roscore`程序运行。
+   
+3. 打开一个新的Terminal,启动一个海归仿真器,海归仿真器`turtlesim`是一个功能包，启动功能把需要用`rosrun`。`turtlesim_node`为仿真节点
    ```SHELL
    rosrun turtlesim turtlesim_node
    ```
-3. 打开一个新的Terminal,它也是一个节点
+4. 打开一个新的Terminal,它也是一个节点
    ```SHELL
    rosrun turtlesim turtle_teleop_key
    ```
-4. 打开一个新的Terminal,rqt工具来查看之间的关系
+5. 打开一个新的Terminal,rqt工具来查看之间的关系
    ```SHELL
    rqt_graph
    ```
-5. 打开新的Terminal，也可以通过命令行查看节点具体信息
+6. 打开新的Terminal，也可以通过命令行查看节点具体信息
    ```SHELL
    rosnode list
    ```
@@ -71,7 +82,11 @@ graph TD;
    ```
    编译成功后`catkin_ws`工作空间文件夹下会出现`src`,`devel`,`launch`,`src` 文件夹，但是没有出现`Install`
    可以通过将`catkin_make`换成`catkin_make install`
-5. 查看环境变量，添加变量
+5. 查看环境变量，
+   ```SHELL
+   echo $ROS_PATH_
+   ```
+   添加变量
    ```SHELL
    source devel/setup.sh
    ```
@@ -81,8 +96,7 @@ graph TD;
    ```
    然后再添加环境变量后执行`source devel/setup.sh`就有相应的返回值。
 ### 02.2创建功能包
-ROS下，源代码都必须在功能包下才能编译运行。需要把源代码放到`src`文件夹下
-
+ROS下，源代码都必须在功能包下才能编译运行。需要把源代码放到`src`文件夹下。其实功能包大家并不陌生，如日'turtlesim'就是一个功能包，而后面的'turtlesim_node'和'turlte_teleop_key'就是功能包下的程序。
 
 
 
