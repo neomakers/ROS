@@ -14,7 +14,7 @@ ROS 入门
    source /opt/ros/melodic/setup.bash
    echo $ROS_PACKAGE_PATH
    ```
-   输出`/opt/ros/melodic/share`说明该位置的ROS变量已经添加到环境变量当中。再执行`roscore`程序运行。
+   输出`/opt/ros/melodic/share`说明该位置的ROS变量(也就是ROS命令或者功能包)已经添加到环境变量当中。再执行`roscore`程序运行。
    
 3. 打开一个新的Terminal,启动一个海归仿真器,海归仿真器`turtlesim`是一个功能包，启动功能把需要用`rosrun`。`turtlesim_node`为仿真节点
    ```SHELL
@@ -84,11 +84,7 @@ graph TD;
    可以通过将`catkin_make`换成`catkin_make install`
 5. 查看环境变量，
    ```SHELL
-   echo $ROS_PATH_
-   ```
-   添加变量
-   ```SHELL
-   source devel/setup.sh
+   echo $ROS_PACKAGE_PATH
    ```
    如果没有任何反馈证明该值为空，执行前确保当前路径为`~/catkin_ws/`
    ```SHELL
@@ -96,7 +92,22 @@ graph TD;
    ```
    然后再添加环境变量后执行`source devel/setup.sh`就有相应的返回值。
 ### 02.2创建功能包
-ROS下，源代码都必须在功能包下才能编译运行。需要把源代码放到`src`文件夹下。其实功能包大家并不陌生，如日'turtlesim'就是一个功能包，而后面的'turtlesim_node'和'turlte_teleop_key'就是功能包下的程序。
+   ROS下，源代码都必须在功能包下才能编译运行。需要把源代码放到`src`文件夹下。其实功能包大家并不陌生，如日'turtlesim'就是一个功能包，而后面的'turtlesim_node'和'turlte_teleop_key'就是功能包下的节点。一个工作空间下可以有好些功能包。
+1. 创建功能包   
+   ```SHELL
+   catkin_create_pkg test_pkg std_msgs rospy roscpp
+   ```
+   其中，功能包名称为test_pkg,依赖的包有std_mgs、rospy、roscpp
+   
+2. 退回到工作空间目录进行编译
+   ```SHELL
+   cd ~/catkin
+   catkin_make
+   ```
+   编译成功后将新的工作空间的路径添加到系统变量当中,这样系统才能识别出工作空间下的变量。
+   ```SHELL
+   source ~/catkin_ws/devel/setup.sh
+   ```
 
 
 
