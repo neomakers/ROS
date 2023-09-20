@@ -138,4 +138,66 @@ source /opt/melodic/setup.bash
    ```SHELL
    list      md5       package   packages  show 
    ```
-   通过`rosmsg list`我们可以查看定义好的信息文件其中的格式
+   通过`rosmsg list`我们可以查看定义好的信息文件其中的格式,我们启动一次package `rosmsg`机会加载一次。
+   ```SHELL
+   ubuntu@ubuntu-Inspiron-3543:~$ rosservice  list
+   /clear
+   /kill
+   /reset
+   /rosout/get_loggers
+   /rosout/set_logger_level
+   /spawn
+   /teleop_turtle/get_loggers
+   /teleop_turtle/set_logger_level
+   /turtle1/set_pen
+   /turtle1/teleport_absolute
+   /turtle1/teleport_relative
+   /turtlesim/get_loggers
+   /turtlesim/set_logger_level
+   ```
+   其中我们这里要创建新的海归，需要使用`/spawn`,这里我们可以通过`rosservice info /spawn`查看相应的信息
+   ```SHELL
+   ubuntu@ubuntu-Inspiron-3543:~$ rosservice  info /spawn
+   Node: /turtlesim
+   URI: rosrpc://ubuntu-Inspiron-3543:59849
+   Type: turtlesim/Spawn
+   Args: x y theta name
+   ```
+   不难发现他是Node: /turtlesim节点下的。同理我们可以在`rosnode info /turtlesim`中看到这个相应信息
+   ```SHELL
+      ubuntu@ubuntu-Inspiron-3543:~$ rosnode info /turtlesim
+      --------------------------------------------------------------------------------
+      Node [/turtlesim]
+      Publications: 
+       * /rosout [rosgraph_msgs/Log]
+       * /turtle1/color_sensor [turtlesim/Color]
+       * /turtle1/pose [turtlesim/Pose]
+      
+      Subscriptions: 
+       * /turtle1/cmd_vel [geometry_msgs/Twist]
+      
+      Services: 
+       * /clear
+       * /kill
+       * /reset
+       * /spawn
+       * /turtle1/set_pen
+       * /turtle1/teleport_absolute
+       * /turtle1/teleport_relative
+       * /turtlesim/get_loggers
+       * /turtlesim/set_logger_level
+      
+      
+      contacting node http://ubuntu-Inspiron-3543:43827/ ...
+      Pid: 11685
+      Connections:
+       * topic: /rosout
+          * to: /rosout
+          * direction: outbound (59849 - 127.0.0.1:38862) [28]
+          * transport: TCPROS
+       * topic: /turtle1/cmd_vel
+          * to: /teleop_turtle (http://ubuntu-Inspiron-3543:38425/)
+          * direction: inbound (51512 - ubuntu-Inspiron-3543:37383) [30]
+          * transport: TCPROS
+
+   ```
