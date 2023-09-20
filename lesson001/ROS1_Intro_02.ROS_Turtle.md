@@ -35,40 +35,40 @@ source /opt/melodic/setup.bash
   /turtlesim
   ```
 ### `rosnode info`
-  查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`
+  查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`,输出如下。其中我们可以看到`Subscriptions: * /turtle1/cmd_vel [geometry_msgs/Twist]`这一项。
   ```SHELL
---------------------------------------------------------------------------------
-Node [/turtlesim]
-Publications: 
- * /rosout [rosgraph_msgs/Log]
- * /turtle1/color_sensor [turtlesim/Color]
- * /turtle1/pose [turtlesim/Pose]
-
-Subscriptions: 
- * /turtle1/cmd_vel [geometry_msgs/Twist]
-
-Services: 
- * /clear
- * /kill
- * /reset
- * /spawn
- * /turtle1/set_pen
- * /turtle1/teleport_absolute
- * /turtle1/teleport_relative
- * /turtlesim/get_loggers
- * /turtlesim/set_logger_level
-
-
-contacting node http://ubuntu-Inspiron-3543:43827/ ...
-Pid: 11685
-Connections:
- * topic: /rosout
-    * to: /rosout
-    * direction: outbound (59849 - 127.0.0.1:38862) [28]
-    * transport: TCPROS
- * topic: /turtle1/cmd_vel
-    * to: /teleop_turtle (http://ubuntu-Inspiron-3543:38425/)
-    * direction: inbound (51512 - ubuntu-Inspiron-3543:37383) [30]
-    * transport: TCPROS
+    --------------------------------------------------------------------------------
+    Node [/turtlesim]
+    Publications: 
+     * /rosout [rosgraph_msgs/Log]
+     * /turtle1/color_sensor [turtlesim/Color]
+     * /turtle1/pose [turtlesim/Pose]
+    
+    Subscriptions: 
+     * /turtle1/cmd_vel [geometry_msgs/Twist]
+    
+    Services: 
+     * /clear
+     * /kill
+     * /reset
+     * /spawn
+     * /turtle1/set_pen
+     * /turtle1/teleport_absolute
+     * /turtle1/teleport_relative
+     * /turtlesim/get_loggers
+     * /turtlesim/set_logger_level
+    
+    
+    contacting node http://ubuntu-Inspiron-3543:43827/ ...
+    Pid: 11685
+    Connections:
+     * topic: /rosout
+        * to: /rosout
+        * direction: outbound (59849 - 127.0.0.1:38862) [28]
+        * transport: TCPROS
+     * topic: /turtle1/cmd_vel
+        * to: /teleop_turtle (http://ubuntu-Inspiron-3543:38425/)
+        * direction: inbound (51512 - ubuntu-Inspiron-3543:37383) [30]
+        * transport: TCPROS
 
   ```
