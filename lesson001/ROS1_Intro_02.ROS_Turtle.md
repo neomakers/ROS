@@ -27,14 +27,14 @@ source /opt/melodic/setup.bash
 ## 03. 常见ROS命令
 ### `rosnode`
    是查看节点命令，按住`Tab`按键，可以查看后面的选项。
-### `rosnode list`
+#### `rosnode list`
    产看`rosnode`的列表输入命令`rosnode list`得到如下结果,其中`rosout`是ROS当中发送log信息的文件，启用roscore机会产生此节点
   ```SHELL
   /rosout
   /teleop_turtle
   /turtlesim
   ```
-### `rosnode info`
+#### `rosnode info`
     查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`,输出如下。其中我们可以看到`Subscriptions: * /turtle1/cmd_vel [geometry_msgs/Twist]`这一项。就是在[图](https://github.com/neomakers/ROS/blob/main/lesson001/pic/lesson02rosgraph.png)中看到的消息
   ```SHELL
     --------------------------------------------------------------------------------
@@ -72,3 +72,28 @@ source /opt/melodic/setup.bash
         * transport: TCPROS
 
   ```
+### `rostopic`
+  是产看话题相关信息多的领命
+  #### `rostopic list`
+  查看ROS的话题。
+  ```SHELL
+   /rosout
+   /rosout_agg
+   /turtle1/cmd_vel
+   /turtle1/color_sensor
+   /turtle1/pose
+  ```
+  ####  `rostopic pub`
+  发布信息，我们可以尝试通过该条命令向海归发送信息。设置X方向线速度为1。根据上述`rostopic list`可以知道相应的topic，这里是`/turtle1/cmd_vel`。根据查找相应的`rostopic info`可以知道相应内部的信息`rostopic info /turtle1/cmd`
+  
+  ```SHELL
+   rostopic pub /turtle1/cmd_vel  geometry_msgs/Twist "linear:
+  x: 1.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+  ```
+   
