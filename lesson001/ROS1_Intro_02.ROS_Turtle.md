@@ -7,7 +7,7 @@
 ### 02 图形查看节点信息
    启动查看工具rqt_graph。打开Terminal，输入```rqt_graph```。启动图产看工具。
      
-   ![图](https://github.com/neomakers/ROS/blob/main/lesson001/lesson02rosgraph.png)
+   ![图](https://github.com/neomakers/ROS/blob/main/lesson001/pic/lesson02rosgraph.png)
 
    (提示，如果roscore，rosrun等ros命令不要用，需要将ros添加至环境变量,```source /opt/melodic/setup.bash```)
 
@@ -35,7 +35,7 @@ source /opt/melodic/setup.bash
   /turtlesim
   ```
 ### `rosnode info`
-    查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`,输出如下。其中我们可以看到`Subscriptions: * /turtle1/cmd_vel [geometry_msgs/Twist]`这一项。就是在[图](https://github.com/neomakers/ROS/blob/main/lesson001/lesson02rosgraph.png)中看到的消息
+    查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`,输出如下。其中我们可以看到`Subscriptions: * /turtle1/cmd_vel [geometry_msgs/Twist]`这一项。就是在[图](https://github.com/neomakers/ROS/blob/main/lesson001/pic/lesson02rosgraph.png)中看到的消息
   ```SHELL
     --------------------------------------------------------------------------------
     Node [/turtlesim]
