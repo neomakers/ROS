@@ -84,16 +84,42 @@ source /opt/melodic/setup.bash
    /turtle1/pose
   ```
   ####  `rostopic pub`
-  发布信息，我们可以尝试通过该条命令向海归发送信息。设置X方向线速度为1。根据上述`rostopic list`可以知道相应的topic，这里是`/turtle1/cmd_vel`。根据查找相应的`rostopic info`可以知道相应内部的信息`rostopic info /turtle1/cmd`
-  
-  ```SHELL
-   rostopic pub /turtle1/cmd_vel  geometry_msgs/Twist "linear:
-  x: 1.0
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 0.0" 
-  ```
+  发布信息，我们可以尝试通过该条命令向海归发送信息。设置X方向线速度为1。根据上述`rostopic list`可以知道相应的topic，这里是`/turtle1/cmd_vel`。根据查找相应的`rostopic info`可以知道相应内部的信息。`rostopic info /turtle1/cmd_vel`,其内部显现
+   ```SHELL
+      Type: geometry_msgs/Twist
+      
+      Publishers: 
+       * /teleop_turtle (http://ubuntu-Inspiron-3543:38425/)
+      
+      Subscribers: 
+       * /turtlesim (http://ubuntu-Inspiron-3543:43827/)
+   ```
    
+   我们知道`/turtle1/cmd_vel`的基本信息了，需要的是`geometry_msgs/Twist`。所以可以进行如下操作，给指定话题pub,注意如下代码大多是复制粘贴和Tab而非手写，自动生成为主。
+   ```SHELL
+   rostopic pub /turtle1/cmd_vel  geometry_msgs/Twist "linear:
+   x: 1.0
+   y: 0.0
+   z: 0.0
+   angular:
+   x: 0.0
+   y: 0.0
+   z: 0.0" 
+   ```
+   我们不难发现执行上述命令后，海归至运动一次。通过修改上述命令中的增加-r 形成10Hz的重复，`r`代表的是repeat
+   
+   ```SHELL
+   rostopic pub -r 10 /turtle1/cmd_vel  geometry_msgs/Twist "linear:
+   x: 1.0
+   y: 0.0
+   z: 0.0
+   angular:
+   x: 0.0
+   y: 0.0
+   z: 0.1" 
+   ```
+   ### `rosmsg`查看消息
+   比如我们要查看上述命令中的消息，`geometry_msgs/Twist`消息可以使用如下代码
+   ```SHELL
+   rosmsg geometry_msgs/Twist
+   ```
