@@ -1,14 +1,17 @@
 # Turtle 命令
   通过命令行操控Turtle，就会用到ROS命令，常见的ROS命令，可以参考[ClearPathRobtics官方](https://clearpathrobotics.com/ros-robot-operating-system-cheat-sheet/)详见[下载melodic命令文件]()
-## 准备工作：
+## 01.准备工作：
   1. 打开Terminal, 输入```roscore```；
   2. 打开Terminal, 输入```rosrun turtlesim turtlesim_node```。启动节点；
   3. 打开Terminal, 输入```rosrun turtlesim turtle_teleop_key```。启动控制键盘；
-  4. 启动查看工具rqt_graph。打开Terminal，输入```rqt_graph```。启动图产看工具。
+### 02 图形查看节点信息
+启动查看工具rqt_graph。打开Terminal，输入```rqt_graph```。启动图产看工具。
      
 ![图](https://github.com/neomakers/ROS/blob/main/lesson001/lesson02rosgraph.png)
+
 (提示，如果roscore，rosrun等ros命令不要用，需要将ros添加至环境变量,```source /opt/melodic/setup.bash```)
-## 加载配置文件不用每次输入```source /opt/melodic/setup.bash```
+
+## 02.加载配置文件不用每次输入```source /opt/melodic/setup.bash```
 每次Terminal打开都会通运行配置文件`.bashrc`文件。通过在`.bashrc`文件中添加```source /opt/melodic/setup.bash```命令。从而使得每次启动自动加载ROS命令。
 ```SHELL
 vim ~/.bashrc
@@ -21,5 +24,15 @@ source /opt/melodic/setup.bash
 按下键盘上的`ESC`按键，此时跳转到命令状态。此时输入冒号`:w`按下`Enter`按键。将保存(其中w是write的缩写，写入)。然后输入`:q`按`Enter`按键，退出。（其中`q`为quit的缩写）。
 恭喜你，至此以后打开Terminal会自动加载ROS命令了。不用每次输入`source /opt/ros/melodic/setup.bash`
 
-## 
-
+## 03. 常见ROS命令
+### `rosnode`
+  是查看节点命令，按住`Tab`按键，可以查看后面的选项。
+### `rosnode list`
+  产看`rosnode`的列表
+  ```SHELL
+  /rosout
+  /teleop_turtle
+  /turtlesim
+  ```
+### `rosnode info`
+  查看相应节点的信息
