@@ -220,4 +220,12 @@ source /opt/melodic/setup.bash
 
    ```
 ### 03.04 `rosbag`查看消息
-   它
+   它可以记录当前话题下的操作：
+   ```SHELL
+   rosbag record -a -O ~/Desktop/cmd_record
+   ```
+   桌面会出现一个文件`cmd_record.bag`
+   ```SHELL
+   rosbag play ~/Desktop/cmd_record.bag
+   ```
+   
