@@ -28,11 +28,13 @@ source /opt/melodic/setup.bash
 ### `rosnode`
   是查看节点命令，按住`Tab`按键，可以查看后面的选项。
 ### `rosnode list`
-  产看`rosnode`的列表输入命令`rosnode list`得到如下结果,其中`rosout`是ROS当中发送log信息的文件
+  产看`rosnode`的列表输入命令`rosnode list`得到如下结果,其中`rosout`是ROS当中发送log信息的文件，启用roscore机会产生此节点
   ```SHELL
   /rosout
   /teleop_turtle
   /turtlesim
   ```
 ### `rosnode info`
-  查看相应节点的信息
+  查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`
+  ```SHELL
+  ```
