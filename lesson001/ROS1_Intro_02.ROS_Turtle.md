@@ -207,5 +207,16 @@ source /opt/melodic/setup.bash
    theta: 0.0
    name: 'turtle2'" 
    ```
-   提交完成之后系统会返回一个值`name: "turtle2"`
+   提交完成之后系统会返回一个值`name: "turtle2"`，利用这个topic进行控制海归2
+   ```SHELL
+   rostopic pub -r 10 /turtle2/cmd_vel geometry_msgs/Twist "linear:
+     x: 1.0
+     y: 0.0
+     z: 0.0
+   angular:
+     x: 0.0
+     y: 0.0
+     z: 0.0" 
+
+   ```
 
