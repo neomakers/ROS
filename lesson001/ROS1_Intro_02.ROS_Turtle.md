@@ -16,7 +16,7 @@
 ```SHELL
 vim ~/.bashrc
 ```
-### Vim 编辑器简单使用
+### 02.1 Vim 编辑器简单使用
    vim编辑器，在命令状态下按下`GG`，会自动跳转至文件最后。然后按下`o`会插入一行,此时进入到编辑状态。
 ```SHELL
 source /opt/melodic/setup.bash
@@ -25,16 +25,16 @@ source /opt/melodic/setup.bash
    恭喜你，至此以后打开Terminal会自动加载ROS命令了。不用每次输入`source /opt/ros/melodic/setup.bash`
 
 ## 03. 常见ROS命令
-### `rosnode`
+### 03.1 `rosnode`
    是查看节点命令，按住`Tab`按键，可以查看后面的选项。
-#### `rosnode list`
+#### 03.1.1`rosnode list`
    产看`rosnode`的列表输入命令`rosnode list`得到如下结果,其中`rosout`是ROS当中发送log信息的文件，启用roscore机会产生此节点
   ```SHELL
   /rosout
   /teleop_turtle
   /turtlesim
   ```
-#### `rosnode info`
+#### 03.1.2`rosnode info`
     查看相应节点的信息，比如上述节点中`\turtlesim`,输入`rosnode info \turtlesim`,输出如下。其中我们可以看到`Subscriptions: * /turtle1/cmd_vel [geometry_msgs/Twist]`这一项。就是在[图](https://github.com/neomakers/ROS/blob/main/lesson001/pic/lesson02rosgraph.png)中看到的消息
   ```SHELL
     --------------------------------------------------------------------------------
@@ -72,9 +72,9 @@ source /opt/melodic/setup.bash
         * transport: TCPROS
 
   ```
-### `rostopic`
+### 03.2`rostopic`
   是产看话题相关信息多的领命
-  #### `rostopic list`
+  #### 03.2.1`rostopic list`
   查看ROS的话题。
   ```SHELL
    /rosout
@@ -83,7 +83,7 @@ source /opt/melodic/setup.bash
    /turtle1/color_sensor
    /turtle1/pose
   ```
-  ####  `rostopic pub`
+  ####  03.2.2`rostopic pub`
   发布信息，我们可以尝试通过该条命令向海归发送信息。设置X方向线速度为1。根据上述`rostopic list`可以知道相应的topic，这里是`/turtle1/cmd_vel`。根据查找相应的`rostopic info`可以知道相应内部的信息。`rostopic info /turtle1/cmd_vel`,其内部显现
    ```SHELL
       Type: geometry_msgs/Twist
@@ -118,7 +118,7 @@ source /opt/melodic/setup.bash
    y: 0.0
    z: 0.1" 
    ```
-   ### `rosmsg`查看消息
+### 03.04`rosmsg`查看消息
    比如我们要查看上述命令中的消息，`geometry_msgs/Twist`消息可以使用如下代码
    ```SHELL
    rosmsg show geometry_msgs/Twist
