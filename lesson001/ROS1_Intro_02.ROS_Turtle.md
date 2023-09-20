@@ -200,4 +200,12 @@ source /opt/melodic/setup.bash
           * direction: inbound (51512 - ubuntu-Inspiron-3543:37383) [30]
           * transport: TCPROS
    ```
+   这里我们创建一个新的turtle
+   ```SHELL
+   rosserivce call /spawn  /spawn "x: 0.1
+   y: 0.0
+   theta: 0.0
+   name: 'turtle2'" 
+   ```
+   提交完成之后系统会返回一个值`name: "turtle2"`
 
