@@ -118,7 +118,7 @@ source /opt/melodic/setup.bash
    y: 0.0
    z: 0.1" 
    ```
-### 03.04`rosmsg`查看消息
+### 03.03 `rosmsg`查看消息
    比如我们要查看上述命令中的消息，`geometry_msgs/Twist`消息可以使用如下代码
    ```SHELL
    rosmsg show geometry_msgs/Twist
@@ -207,7 +207,7 @@ source /opt/melodic/setup.bash
    theta: 0.0
    name: 'turtle2'" 
    ```
-   提交完成之后系统会返回一个值`name: "turtle2"`，利用这个topic进行控制海归2
+   提交完成之后系统会返回一个值`name: "turtle2"`，利用这个topic,可以使用`topic list`查看。进行控制海归2
    ```SHELL
    rostopic pub -r 10 /turtle2/cmd_vel geometry_msgs/Twist "linear:
      x: 1.0
@@ -219,4 +219,5 @@ source /opt/melodic/setup.bash
      z: 0.0" 
 
    ```
-
+### 03.04 `rosbag`查看消息
+   它
