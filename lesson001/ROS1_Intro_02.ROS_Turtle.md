@@ -121,5 +121,21 @@ source /opt/melodic/setup.bash
    ### `rosmsg`查看消息
    比如我们要查看上述命令中的消息，`geometry_msgs/Twist`消息可以使用如下代码
    ```SHELL
-   rosmsg geometry_msgs/Twist
+   rosmsg show geometry_msgs/Twist
    ```
+   得到如下结果：
+   ```SHELL
+   geometry_msgs/Vector3 linear
+     float64 x
+     float64 y
+     float64 z
+   geometry_msgs/Vector3 angular
+     float64 x
+     float64 y
+     float64 z
+   ```
+   我们也可以通过`rosmsg `用TAB键补全，从而得到相应的全部选项
+   ```SHELL
+   list      md5       package   packages  show 
+   ```
+   通过`rosmsg list`我们可以查看定义好的信息文件其中的格式
