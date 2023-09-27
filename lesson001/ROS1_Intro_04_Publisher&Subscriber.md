@@ -5,5 +5,6 @@
       ```SHELL
       catkin_create_pkg learning_topic roscpp rospy std_msgs geometry_msgs turtlesim
       ```
+      执行上述命令后通过`ls`不难发现，已经形成了对应的包文件在工作空间`catkin_ws`的`src`文件夹下。
    2. 在相应的package文件夹下的src，创建```velocity_publisher.cpp```文件。
    3. 
