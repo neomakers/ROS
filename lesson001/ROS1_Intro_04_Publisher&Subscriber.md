@@ -50,4 +50,24 @@
             }
 
       ```
-   4. 
+   4. 改变相应包package中的CMakelists.txt文件，CMakelists是编译相应的cpp文件的设置文件:
+      ```SHELL
+      cd ~/catkin_ws/src/learning_topic/
+      vim ./CMakelists.txt
+      ```
+      然后在其中添加
+      ```SHELL
+      add_executable(velocity_publisher src/velocity_publisher.cpp)
+      target_link_libraries(velocity_publisher ${catkin_LIBRARIES})
+      ```
+      其中第一句话是形成可执行文件，第二句话是将ROS标准库当中连接到相应的可执行文件上
+   5. 重新到工作空间目录下执行编译
+      ```SHELL
+      cd ~/catkin_ws
+      catkin_make
+      ```
+   6. 将编译好的工作空间下的包添加到环境变量中
+      ```SHELL
+      source ~/catkin_ws/devel/setup.bash
+      ```
+然后我们就可以查看运行结果，在新的Terminal窗口内执行`roscore`,`rosrun turtlesim turtlesim_node`。在当前窗口执行`rosrun learning_topic velocity_publisher`。观察实验效果。
