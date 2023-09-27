@@ -1,0 +1,1 @@
+本节课要实现建立一个名称为`learning topic`的package,然后在该package下面创建一个名称为`velocity_publisher`的node
