@@ -8,7 +8,7 @@
       执行上述命令后通过`ls`不难发现，已经形成了对应的包文件'learing_topic'在工作空间`catkin_ws`的`src`文件夹下。当如上代码报错时，请查看ros变量是否加载到环境当中。`source /opt/ros/melodic/setup.bash`
    2. 在相应的package文件夹下的src，创建```velocity_publisher.cpp```文件。
       ```SHELL
-      cd ./learning_topic/src/
+      vim ./learning_topic/src/velocity_publisher.cpp
       ```
       然后粘贴如下代码：
       ```cpp 
