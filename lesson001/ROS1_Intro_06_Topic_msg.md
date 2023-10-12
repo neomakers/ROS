@@ -121,4 +121,10 @@ add_executable(person_sub src/person_subscriber.cpp)
 target_link_libraries(person_sub ${catkin_LIBRARIES})
 add_dependencies(person_sub ${PROJECT_NAME}_generate_messages_cpp)
 ```
+## 4 重新编译和运行
+- 1 .在catkin_ws空间下重新编译`catkin_make`
 大家发现，我们在最后一段加上了一个动态链接，这个动态链接是根据我们生成msg文件定义有关。于自定义消息进行链接必须添加这么一段话。
+- 2 .在Terminal非别输入以下语句使之运行
+  - a. `roscore`
+  - b. `rosrun learning_topic person_pub`
+  - c. `rosrun learning_topic person_sub`
