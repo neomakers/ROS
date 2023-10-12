@@ -31,3 +31,8 @@ int main(int argc, char **argv)
 
 ```
 同理我们要在相应的CMakeList.txt文件当中进行添加相应的内容
+```shell
+add_executable(pos_sub src/pos_sub.cpp)
+target_link_libraries(pos_sub ${catkin_LIBRARIES})
+```
+```
