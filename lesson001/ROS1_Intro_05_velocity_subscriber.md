@@ -30,3 +30,4 @@ int main(int argc, char **argv)
 }
 
 ```
+同理我们要在相应的CMakeList.txt文件当中进行添加相应的内容
