@@ -11,13 +11,13 @@ uint8 male=1
 uint8 female=2
 ```
 ## 2.修改对应package下面的编译选项
-### package.xml修改编译和运行一类 
+### 2.1package.xml修改编译和运行一类 
 在package.xml中添加功能包依赖,其中第一条为编译依赖，第二条为运行依赖。
 ```shell
 <build_depend>message_generation</build_depend>
 <exec_depend>message_runtime</exec_depend>
 ```
-### CmakeList语言编译运行依赖
+### 2.2CmakeList语言编译运行依赖
 在CmakeList.txt修改
 ```shell
 #添加文件
@@ -32,5 +32,5 @@ generate_messages(DEPENDENCIES std_msgs)
 #创建运行依赖,主要对应所说的是package.xml中的message_runtime
 catkin_package(...message_runtime)
 ```
-## 编译尝试
+### 2.3编译尝试
 我们在`catkin_make`后进入`devel`中的`include`可以看到`Person.h`的文件。这是上述配置生成的。打开发现是C++类的头文件。
