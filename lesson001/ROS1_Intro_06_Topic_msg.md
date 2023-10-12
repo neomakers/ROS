@@ -34,3 +34,9 @@ catkin_package(...message_runtime)
 ```
 ### 2.3编译尝试
 我们在`catkin_make`后进入`devel`中的`include`可以看到`Person.h`的文件。这是上述配置生成的。打开发现是C++类的头文件。
+## 3 通过Publish和Subscribe使用自定的Topic中的msg
+### 3.1 建立Publish
+```c++
+
+```
+
