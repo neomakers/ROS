@@ -121,4 +121,4 @@ add_executable(person_sub src/person_subscriber.cpp)
 target_link_libraries(person_sub ${catkin_LIBRARIES})
 add_dependencies(person_sub ${PROJECT_NAME}_generate_messages_cpp)
 ```
-大家发现，我们在最后一段加上了一个动态链接，这个动态链接是根据我们生成msg文件定义有关。
+大家发现，我们在最后一段加上了一个动态链接，这个动态链接是根据我们生成msg文件定义有关。于自定义消息进行链接必须添加这么一段话。
