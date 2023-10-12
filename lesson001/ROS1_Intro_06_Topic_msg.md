@@ -111,3 +111,14 @@ int main(int argc, char **argv)
 }
 ```
 ### 3.3 修改配置文件CMakeList.txt
+打开CmakeList.txt文件，添加需要编译的文件信息，这里是`person_publisher.cpp`和`person_subscriber.cpp`相应的内容。
+```shell
+add_executable(person_pub src/person_publisher.cpp)
+target_link_libraries(person_pub ${catkin_LIBRARIES})
+add_dependencies(person_pub ${PROJECT_NAME}_generate_messages_cpp)
+
+add_executable(person_sub src/person_subscriber.cpp)
+target_link_libraries(person_sub ${catkin_LIBRARIES})
+add_dependencies(person_sub ${PROJECT_NAME}_generate_messages_cpp)
+```
+大家发现，我们在最后一段加上了一个动态链接，这个动态链接是根据我们生成msg文件定义有关。
