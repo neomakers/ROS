@@ -11,7 +11,7 @@ uint8 male=1
 uint8 female=2
 ```
 ## 2.修改对应package下面的编译选项
-### 2.1package.xml修改编译和运行一类 
+### 2.1package.xml修改编译和运行依赖
 在package.xml中添加功能包依赖,其中第一条为编译依赖，第二条为运行依赖。
 ```shell
 <build_depend>message_generation</build_depend>
