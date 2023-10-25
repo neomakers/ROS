@@ -1,6 +1,6 @@
 # 自定义话题消息的使用
 ## 1.建立自定义话题消息
-我们定义一个Topic的话题消息,其消息文件为`Person.msg`文件在`learning_topic`下面的`msg`文件夹下。可以考虑用`touch ~/catkin_ws/src/learning_topic/Person.msg`
+我们定义一个Topic的话题消息,其消息文件为`Person.msg`文件在`learning_topic`下面的`msg`文件夹下。可以考虑用`touch ~/catkin_ws/src/learning_topic/msg/Person.msg`
 ```shell
 string name
 uint8 sex
