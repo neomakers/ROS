@@ -63,3 +63,12 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
+执行下面的语句
+```shell
+catkin_make
+```
+ 1. ```shell roscore```
+ 2. ```shell rosrun turtlesim turtlesim_node```
+ 3. ```shell rosrun learning_service turtle_command_server```
+ 4. ```shell rosserver call /turtle_command "{}"```
+    
