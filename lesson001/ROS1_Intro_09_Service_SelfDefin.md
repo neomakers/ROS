@@ -11,3 +11,8 @@ uint8 female  = 2
 ---
 string result
 ```
+然后修改package.xml文件，添加
+```shell
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+```
