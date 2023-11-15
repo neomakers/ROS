@@ -16,3 +16,13 @@ string result
 <build_depend>message_generation</build_depend>
 <exec_depend>message_runtime</exec_depend>
 ```
+```shell
+findpackage(... message_generation)
+add_service_files(FILES Person.srv)
+generate_message(DEPENDENCIES std_msgs)
+catkin_package(
+ INCLUDE_DIRS include
+ LIBRARIES learning_service
+ message_runtime
+)
+```
