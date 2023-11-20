@@ -1,4 +1,3 @@
-```c++
 #include <string>
 #include <ros/ros.h>
 #include <std_srvs/Empty.h>
@@ -14,23 +13,26 @@ int main(int argc, char **argv)
     ros::NodeHandle node;
 
     // 读取背景颜色参数
-	ros::param::get("/background_r", red);
-	ros::param::get("/background_g", green);
-	ros::param::get("/background_b", blue);
+    char red_para[]="turtlesim/background_r";
+    char blue_para[]="turtlesim/background_b";
+    char green_para[]="turtlesim/background_g";
+	ros::param::get(red_para, red);
+	ros::param::get(blue_para, green);
+	ros::param::get(green_para, blue);
 
 	ROS_INFO("Get Backgroud Color[%d, %d, %d]", red, green, blue);
 
 	// 设置背景颜色参数
-	ros::param::set("/background_r", 255);
-	ros::param::set("/background_g", 255);
-	ros::param::set("/background_b", 255);
+	ros::param::set(red_para,255);
+	ros::param::set(green_para, 255);
+	ros::param::set(blue_para, 255);
 
 	ROS_INFO("Set Backgroud Color[255, 255, 255]");
 
     // 读取背景颜色参数
-	ros::param::get("/background_r", red);
-	ros::param::get("/background_g", green);
-	ros::param::get("/background_b", blue);
+    ros::param::get(red_para, red);
+	ros::param::get(blue_para, green);
+	ros::param::get(green_para, blue);
 
 	ROS_INFO("Re-get Backgroud Color[%d, %d, %d]", red, green, blue);
 
@@ -39,9 +41,8 @@ int main(int argc, char **argv)
 	ros::ServiceClient clear_background = node.serviceClient<std_srvs::Empty>("/clear");
 	std_srvs::Empty srv;
 	clear_background.call(srv);
-	
+
 	sleep(1);
 
     return 0;
 }
-```
