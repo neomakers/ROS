@@ -1,0 +1,7 @@
+命名'simple.launch'
+```html
+<launch>
+    <node pkg="learning_topic" type="person_subscriber" name="talker" output="screen" />
+    <node pkg="learning_topic" type="person_publisher" name="listener" output="screen" /> 
+</launch>
+```
