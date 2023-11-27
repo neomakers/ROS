@@ -22,6 +22,16 @@
 </launch>
 ```
 
+其中param.yaml文件在learning_launch功能包下的config文件夹下，其中$(find learning_launch)是寻找功能包的含义。其中param.yaml文件中包含内容如下
+```shell
+A: 123
+B: "hello"
+
+group:
+  C: 456
+  D: "hello"
+```
+
 ## 命名`start_tf_demo_c++.launch`
 ```html
  <launch>
